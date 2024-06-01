@@ -1,38 +1,282 @@
-.App {
-  text-align: center;
+body {
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-image: url("https://img.freepik.com/free-photo/3d-dark-grunge-display-background-with-smoky-atmosphere_1048-16218.jpg?size=626&ext=jpg&ga=GA1.1.44546679.1717027200&semt=ais_user");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app-container {
+  max-width: 600px;
+  position: relative;
+  width: 80%;
+  margin: auto;
+  padding: 30px;
+  margin-top: 50px;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: column;
+  /* border: 4px solid transparent; */
+  background-image: url("https://img.freepik.com/free-photo/3d-dark-grunge-display-background-with-smoky-atmosphere_1048-16218.jpg?size=626&ext=jpg&ga=GA1.1.44546679.1717027200&semt=ais_user");
+  background-size: cover;
+  border-radius: 10px;
+  box-shadow: 0 0 2px white;
+  /* animation: border-rotate 1.5s linear infinite alternate-reverse; */
+  /* make more smoother */
+  overflow: hidden;
 }
 
-.App-link {
-  color: #61dafb;
+.app-container::before{
+  content: "";
+  position: absolute;
+  width: 40%;
+  height: 400%;
+  background: linear-gradient(135deg, #d400ff, #ff00c3, #5bf4d5, #d1dc35);
+  border-radius: 10px;
+  animation: rotate 6s linear infinite;
 }
 
-@keyframes App-logo-spin {
-  from {
+.app-container::after{
+  content: "";
+  position: absolute;
+  border-radius: 10px;
+  background-image: url("https://img.freepik.com/free-photo/3d-dark-grunge-display-background-with-smoky-atmosphere_1048-16218.jpg?size=626&ext=jpg&ga=GA1.1.44546679.1717027200&semt=ais_user");
+  background-size: cover;
+  inset: 5px;
+}
+
+@keyframes rotate {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+  100%{
     transform: rotate(360deg);
   }
+}
+
+@keyframes border-rotate {
+  0% {
+    border-top-color: #007bff;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+
+  25% {
+    border-right-color: #007bff;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+
+  50% {
+    border-bottom-color: #28a745;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-left-color: transparent;
+  }
+
+  75% {
+    border-left-color: #985bf4;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+  }
+
+  100% {
+    border-top-color: #dc3545;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+}
+
+
+input[type="text"] {
+  width: 95%;
+  height: 50px;
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-style: none;
+  /* Set border to transparent */
+  border-radius: 10px;
+  font-size: 16px;
+  text-align: center;
+  color: rgb(5, 5, 5);
+  /* Text color */
+  background: linear-gradient(135deg, #13101fe1, #373839);
+  /* Gradient background */
+  box-shadow: 0 10px 8px rgba(60, 70, 70, 0.3);
+  z-index: 2;
+  /* Gradient color shadow */
+}
+
+
+
+input[type="text"]:focus {
+  border-color: #007bff;
+}
+
+input[type="text"]::placeholder {
+  color: #ccc;
+}
+
+input[type="button"] {
+  z-index: 2;
+  width: 60%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  /* colour and bgColor with ai gradient  */
+  background: linear-gradient(135deg, #13101fe1, #232323);color: white;
+  box-shadow: 0 10px 8px rgba(60, 70, 70, 0.3);
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 26px;
+  margin-bottom: 20px;
+}
+
+input[type="button"]:hover {
+  background-color: #ff4081;
+}
+audio {
+  width: 100%;
+  margin-top: 30px;
+  border-radius: 10px;
+}
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1e1d1d;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+.navbar h1{
+  margin: 5px;
+  /* gradient text colour */
+  background: linear-gradient(to right, #ff4e50, #abf354);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.navbar p{
+  margin: 5px 10px;
+  font-size: 1.2rem;
+  background: linear-gradient(to right, #ff4e50, #abf354);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.imageSection {
+  margin-top: 110px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 10px;
+  padding: 20px;
+}
+
+.imageSection img {
+  width: 100%;
+  
+  height: auto;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+@media screen and (max-width: 424px) {
+  .navbar{
+    flex-direction: column;
+    align-items: center;
+  }
+  .navbar h1{
+    margin-bottom: 10px;
+  }
+  .navbar p{
+    margin-top: 10px;
+  }
+  .imageSection {
+    display: flex;
+    flex-direction: column;
+
+  }
+  .imageSection img {
+    height: 200px;
+  }
+
+
+}
+.footer {
+  background-color: #343a40;
+}
+
+.footer h5 {
+  font-weight: bold;
+}
+
+.footer p {
+  font-size: 0.9rem;
+}
+
+.footer .list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+
+.footer .social-icons a {
+  font-size: 1.2rem;
+  margin-right: 15px;
+}
+
+.footer .social-icons a:hover {
+  color: #f9d423;
+}
+
+.footer p {
+  margin: 0;
+}
+.image-container {
+  position: relative;
+  display: inline-block;
+  z-index: 2;
+}
+.generated-image {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+
+}
+.play-pause-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(135deg, #ae00ff, #e100ff, #de00a3, #a4003f);
+  border: none;
+  border-radius: 50%;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.download-button{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: linear-gradient(135deg, #d400ff, #ff00c3, #5bf4d5, #d1dc35);
+  border: none;
+  border-radius: 50%;
+  padding: 2px;
+  cursor: pointer;
+}
+
+.play-pause-button svg {
+  font-size: 24px;
 }
