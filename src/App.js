@@ -17,7 +17,7 @@ const App = () => {
       const response = await fetch(
         "https://api-inference.huggingface.co/models/facebook/musicgen-small",
         {
-          headers: { Authorization: "Bearer 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" },
+          headers: { Authorization: "Bearer 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" },
           method: "POST",
           body: JSON.stringify(data),
         }
@@ -41,7 +41,7 @@ const App = () => {
       const response = await fetch(
         "https://api-inference.huggingface.co/models/sd-community/sdxl-flash",
         {
-          headers : { Authorization : "Bearer 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" },
+          headers : { Authorization : "Bearer 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" },
           method: "POST",
           body: JSON.stringify(data),
         }
