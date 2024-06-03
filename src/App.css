@@ -32,17 +32,17 @@ body {
   overflow: hidden;
 }
 
-.app-container::before{
+.app-container::before {
   content: "";
   position: absolute;
-  width: 40%;
+  width: 30%;
   height: 400%;
   background: linear-gradient(135deg, #d400ff, #ff00c3, #5bf4d5, #d1dc35);
   border-radius: 10px;
-  animation: rotate 6s linear infinite;
+  animation: rotate 5s linear infinite;
 }
 
-.app-container::after{
+.app-container::after {
   content: "";
   position: absolute;
   border-radius: 10px;
@@ -55,7 +55,8 @@ body {
   0% {
     transform: rotate(0deg);
   }
-  100%{
+
+  100% {
     transform: rotate(360deg);
   }
 }
@@ -102,15 +103,15 @@ input[type="text"] {
   width: 95%;
   height: 50px;
   padding: 10px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 30px;
+  margin-bottom: 48px;
   border: 1px solid transparent;
   border-style: none;
   /* Set border to transparent */
   border-radius: 10px;
   font-size: 16px;
   text-align: center;
-  color: rgb(5, 5, 5);
+  color: rgb(255, 255, 255);
   /* Text color */
   background: linear-gradient(135deg, #13101fe1, #373839);
   /* Gradient background */
@@ -118,7 +119,6 @@ input[type="text"] {
   z-index: 2;
   /* Gradient color shadow */
 }
-
 
 
 input[type="text"]:focus {
@@ -129,30 +129,47 @@ input[type="text"]::placeholder {
   color: #ccc;
 }
 
-input[type="button"] {
+button {
   z-index: 2;
   width: 60%;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 10px;
   border: none;
-  border-radius: 5px;
-  /* colour and bgColor with ai gradient  */
-  background: linear-gradient(135deg, #13101fe1, #232323);color: white;
+  border-radius: 5px !important;
+  background: linear-gradient(135deg, #13101fe1, #232323);
+  color: white;
   box-shadow: 0 10px 8px rgba(60, 70, 70, 0.3);
   font-size: 16px;
   cursor: pointer;
-  margin-top: 26px;
-  margin-bottom: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
-input[type="button"]:hover {
+button:hover {
   background-color: #ff4081;
 }
+
+.loader {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress {
+  width: 100%;
+  height: 20px;
+}
+
 audio {
   width: 100%;
   margin-top: 30px;
   border-radius: 10px;
 }
-.navbar{
+
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -161,20 +178,22 @@ audio {
   padding: 10px 20px;
   border-radius: 5px;
 }
-.navbar h1{
+
+.navbar h1 {
   margin: 5px;
-  /* gradient text colour */
   background: linear-gradient(to right, #ff4e50, #abf354);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-.navbar p{
+
+.navbar p {
   margin: 5px 10px;
   font-size: 1.2rem;
   background: linear-gradient(to right, #ff4e50, #abf354);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
+
 .imageSection {
   margin-top: 110px;
   display: grid;
@@ -185,34 +204,35 @@ audio {
 
 .imageSection img {
   width: 100%;
-  
-  height: auto;
   height: 300px;
   object-fit: cover;
   border-radius: 10px;
 }
+
 @media screen and (max-width: 424px) {
-  .navbar{
+  .navbar {
     flex-direction: column;
     align-items: center;
   }
-  .navbar h1{
+
+  .navbar h1 {
     margin-bottom: 10px;
   }
-  .navbar p{
+
+  .navbar p {
     margin-top: 10px;
   }
+
   .imageSection {
     display: flex;
     flex-direction: column;
-
   }
+
   .imageSection img {
     height: 200px;
   }
-
-
 }
+
 .footer {
   background-color: #343a40;
 }
@@ -242,18 +262,21 @@ audio {
 .footer p {
   margin: 0;
 }
+
 .image-container {
   position: relative;
   display: inline-block;
   z-index: 2;
+  margin-top: 25px;
 }
+
 .generated-image {
   width: 250px;
   height: 250px;
   object-fit: cover;
   border-radius: 10px;
-
 }
+
 .play-pause-button {
   position: absolute;
   top: 50%;
@@ -266,7 +289,7 @@ audio {
   cursor: pointer;
 }
 
-.download-button{
+.download-button {
   position: absolute;
   top: 10px;
   right: 10px;
